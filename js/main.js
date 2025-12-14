@@ -119,7 +119,7 @@ function initActiveNavOnScroll() {
 // =============================================
 function initProjectFilter() {
     const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card-hover');
+    const projectCards = document.querySelectorAll('.project-card');
 
     if (filterBtns.length > 0 && projectCards.length > 0) {
         filterBtns.forEach(btn => {

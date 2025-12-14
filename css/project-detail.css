@@ -1,0 +1,174 @@
+/* =============================================
+   Project Detail Page Styles
+   ============================================= */
+
+.project-detail-section {
+    padding: 120px 0 60px;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-block;
+    color: var(--accent-color);
+    font-size: 1rem;
+    margin-bottom: var(--spacing-lg);
+    transition: var(--transition-normal);
+}
+
+.back-btn:hover {
+    color: var(--text-primary);
+}
+
+/* Project Header */
+.project-header {
+    margin-bottom: var(--spacing-lg);
+}
+
+.project-title {
+    font-family: var(--font-heading);
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-category-badge {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--text-dark);
+    padding: 6px 16px;
+    border-radius: var(--radius-md);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Project Gallery */
+.project-gallery {
+    margin-bottom: var(--spacing-xl);
+}
+
+.gallery-thumbnails {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-md);
+    justify-items: center;
+}
+
+.thumbnail {
+    width: 100%;
+    max-width: 210px;
+    height: 330px;
+    border-radius: var(--radius-lg);
+    object-fit: cover;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: var(--transition-normal);
+}
+
+.thumbnail:hover {
+    border-color: var(--accent-color);
+    transform: scale(1.02);
+}
+
+.thumbnail.active {
+    border-color: var(--accent-color);
+}
+
+/* Landscape thumbnails for Disky Way */
+.gallery-thumbnails.landscape-thumbs {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.thumbnail.landscape-thumb {
+    width: 100%;
+    max-width: 400px;
+    height: 225px;
+}
+
+/* Project Info */
+.project-info {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-xl);
+}
+
+.project-description h2 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.project-description p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Sidebar */
+.project-sidebar {
+    background-color: var(--bg-card);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-color);
+    height: fit-content;
+}
+
+.sidebar-section {
+    margin-bottom: var(--spacing-lg);
+}
+
+.sidebar-section:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar-section h3 {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    color: var(--accent-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.sidebar-section p {
+    color: var(--text-secondary);
+}
+
+/* Tools List */
+.tools-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.tool-tag {
+    background-color: var(--secondary-color);
+    color: var(--text-primary);
+    padding: 6px 14px;
+    border-radius: var(--radius-sm);
+    font-size: 0.85rem;
+    border: 1px solid var(--border-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 1.8rem;
+    }
+
+    .gallery-thumbnails {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .thumbnail {
+        height: 250px;
+    }
+
+    .thumbnail.landscape-thumb {
+        height: 120px;
+    }
+
+    .project-info {
+        grid-template-columns: 1fr;
+    }
+}

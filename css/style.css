@@ -1428,7 +1428,7 @@ img {
     color: var(--text-secondary);
 }
 
-/* Project Hover Cards (like Journey Cards) */
+/* Project Grid Cards (like Education Cards) */
 .projects-section .filter-buttons {
     display: flex;
     justify-content: center;
@@ -1437,33 +1437,45 @@ img {
     margin-bottom: var(--spacing-lg);
 }
 
-.project-cards {
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-md);
+}
+
+a.project-card {
+    text-decoration: none;
+    display: block;
+}
+
+.project-card {
+    background-color: var(--bg-card);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md);
+    border: 1px solid var(--border-color);
+    transition: var(--transition-normal);
+}
+
+.project-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-3px);
+}
+
+.project-content {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-md);
-    align-items: center;
+    gap: var(--spacing-xs);
 }
 
-.project-card-hover {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-lg);
-    overflow: hidden;
-    transition: all 0.3s ease;
-    width: 100%;
-    max-width: 600px;
+.project-content .project-category {
+    color: var(--accent-color);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.project-card-hover:hover {
-    border-color: var(--accent-color);
-}
-
-.project-title {
-    padding: var(--spacing-md) var(--spacing-lg);
-    cursor: pointer;
-}
-
-.project-title h4 {
+.project-content h3 {
     font-family: var(--font-heading);
     font-size: 1.2rem;
     color: var(--text-primary);
@@ -1471,52 +1483,15 @@ img {
     transition: var(--transition-normal);
 }
 
-.project-card-hover:hover .project-title h4 {
+.project-card:hover .project-content h3 {
     color: var(--accent-color);
 }
 
-.project-hover {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease, padding 0.3s ease;
-    background-color: var(--secondary-color);
-}
-
-.project-card-hover:hover .project-hover {
-    max-height: 600px;
-    padding: var(--spacing-md) var(--spacing-lg);
-}
-
-.project-image-hover {
-    width: 100%;
-    height: 300px;
-    margin-bottom: var(--spacing-sm);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
-}
-
-.project-image-hover img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.project-details {
-    padding-top: var(--spacing-sm);
-}
-
-.project-category {
-    color: var(--accent-color);
-    font-weight: 600;
-    font-size: 0.9rem;
-    margin-bottom: var(--spacing-xs);
-}
-
-.project-desc {
+.project-content p {
     color: var(--text-secondary);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
 }
 
 /* =============================================
@@ -1899,7 +1874,8 @@ img {
     .featured-grid,
     .education-grid,
     .soft-skills-grid,
-    .faq-grid {
+    .faq-grid,
+    .project-grid {
         grid-template-columns: 1fr;
     }
     
